@@ -1,5 +1,22 @@
 extends layout
 
+block style
+  link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css")
+
+  style(type='text/css').
+    #viewer {
+      height: 100%;
+    }
+
 block content
-  h1= title
-  p Welcome to #{title}
+  .container-fluid
+    .row
+      .col-xs-6
+        label MD
+        textarea(class="form-control", id="md-editor" rows="50")
+      .col-xs-6
+        label 출력
+        #viewer
+
+  script(src="https://cdn.jsdelivr.net/npm/marked/marked.min.js")
+  script(src="/javascripts/trans.js")
