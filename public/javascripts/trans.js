@@ -4,8 +4,10 @@ window.onload = () => {
 }
 
 function translateMD2Html( event ) {
-    const mdString = this.value;
+    marked.setOptions({
+        breaks: true,
+    });
 
-    document.querySelector('#viewer').innerHTML =
-        marked(mdString).replace(/\n/g, "<br />");
+    const mdString = this.value;
+    document.querySelector('#viewer').innerHTML = marked(mdString);
 }
