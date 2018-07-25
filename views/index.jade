@@ -11,12 +11,20 @@ block style
 block content
   .container-fluid
     .row
+      .col-xs-12
+
+        .form-group
+          label("for=mdPath") MD WebPath
+          input.form-control(id="mdPath" type="text" name="mdPath" placeholder="MD 파일 경로")
+          button.btn.btn-primary(id="btnLoadMdFile") 로드
+
+    .row
       .col-xs-6
         label MD
         textarea(class="form-control", id="md-editor" rows="50")
       .col-xs-6
         label 출력
         #viewer
-
+  script(src="https://unpkg.com/axios/dist/axios.min.js")
   script(src="https://cdn.jsdelivr.net/npm/marked/marked.min.js")
   script(src="/javascripts/trans.js")
