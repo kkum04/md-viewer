@@ -7,10 +7,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'md-viewer' });
 });
 
-router.post('/trans', (req, res) => {
-  res.send('kkum');
-});
-
 router.post('/load_md_file', (req, res) => {
   const mdPath = req.body.md_path;
 
@@ -20,6 +16,6 @@ router.post('/load_md_file', (req, res) => {
         res.status(err.response.status);
         res.send(err.response.statusText);
       });
-})
+});
 
 module.exports = router;
